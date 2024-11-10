@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Player de Rádio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+    }
+    .container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    select, button {
+      padding: 10px;
+      margin-top: 10px;
+      font-size: 16px;
+    }
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    audio {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Player Rádio Online URL STREAMING</h1>
+  <label for="radioSelect">Selecione uma rádio:</label>
+  <select id="radioSelect">
+    <option value="http://a1-it.newradio.it:80/stream">Antena 1 - Roma</option>
+	<option value="https://playerservices.streamtheworld.com/api/livestream-redirect/RADIO_ALPHAFM_ADP.aac?dist=onlineradiobox">Alpha FM 101.7</option>
+    <option value="https://playerservices.streamtheworld.com/api/livestream-redirect/CBN_RJAAC.aac?dist=radioscombr">CBN SP</option>
+    <option value="https://funkyradio.streamingmedia.it/play.mp3">Funk Rádio-NY</option>
+    <option value="https://flow.emm.usp.br:8008/radiousp-rp-128.mp3">Rádio USP 93.7 FM</option>
+    <option value="https://stream.zeno.fm/c45wbq2us3buv">Jovem Pan SP</option>
+    <option value="https://usa11.fastcast4u.com/proxy/radiomotel?mp=/stream3">Rádio Motel</option>
+    <option value="https://playerservices.streamtheworld.com/api/livestream-redirect/NATIVA_SPAAC.aac?dist=radios.com.br">Nativa FM SP</option>
+    <option value="https://wz7.servidoresbrasil.com:8162/stream">Rádio Hits 98.9 FM - RJ</option>
+    <option value="https://ice.fabricahost.com.br/metropolitana985sp">Rádio Metropolitana FM</option>
+    <option value="https://stm3.xcast.com.br:12758/stream">BandNews SP</option>
+    <option value="https://playerservices.streamtheworld.com/api/livestream-redirect/RT_SPAAC.aac">Transamérica Pop SP</option>
+    <option value="https://8231.brasilstream.com.br/stream">Rádio Light 103.9 FM - MG</option>
+    <option value="https://stream.zeno.fm/c45wbq2us3buv">Jovem Pan News</option>
+	<option value="https://streaming.inweb.com.br/capital">Rádio Capital</option>
+	<option value="https://playerservices.streamtheworld.com/api/livestream-redirect/MIXFM_SAOPAULOAAC.aac">Mix FM</option>
+  </select>
+
+  <button id="playBtn">Tocar Rádio</button>
+
+  <!-- Tag de áudio para tocar a rádio -->
+  <audio id="audioPlayer" controls>
+    Seu navegador não suporta o elemento de áudio.
+  </audio>
+</div>
+
+<script>
+  const audioPlayer = document.getElementById('audioPlayer');
+  
+  document.getElementById('playBtn').addEventListener('click', function() {
+    var selectedRadio = document.getElementById('radioSelect').value;
+    
+    // Define a fonte do áudio e toca
+    audioPlayer.src = selectedRadio; 
+    audioPlayer.play();
+  });
+</script>
+
+</body>
+</html>
